@@ -1,0 +1,16 @@
+{
+  "name": "pagination",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "DEBUG=practice:* nodemon ./bin/www",
+    "dev-windows": "nodemon ./bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
+  }
+}
