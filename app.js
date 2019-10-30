@@ -21,8 +21,7 @@ const app = express();
 // default value for title local
 app.locals.title = 'MDlive Pagination';
 
-const index = require('./routes/index');
-app.use('/apps', index);
+app.use('/apps', require('./routes/api'));
 
 
 module.exports = app;
