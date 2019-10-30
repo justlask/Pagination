@@ -13,7 +13,6 @@ mongoose
   });
 
 const app_name = require('./package.json').name;
-const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
 
@@ -21,7 +20,11 @@ const app = express();
 // default value for title local
 app.locals.title = 'MDlive Pagination';
 
-app.use('/apps', require('./routes/api'));
+const index = require('./routes/index')
+app.use('/', index)
+
+const api = require('./routes/api')
+app.use('/apps', api);
 
 
 module.exports = app;

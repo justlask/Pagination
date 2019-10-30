@@ -15,6 +15,23 @@ eg: seedApps(100);
 # Doccumentation for the api
 
 
+endpoint is /apps
+
+# Query structure
+  ## apps/?by=id&max=50
+  1. by
+  2.
+  3.
+  4.
+
+
+by: required => id/name only permitted
+start: optional => first in dataset
+end: optional => if undefined return default max => if 
+max: default = 50
+order: asc or desc
+
+
 
 
 # TODO:

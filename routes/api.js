@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const App = require('../models/App')
 /* 
 params: {
       "range": {
@@ -13,6 +14,11 @@ params: {
 
 params: { "range": { "by": "name", "start": "my-app-001", "end": "my-app-050", "max": 10, "order": "asc" } }
 
+by: required => id/name only permitted
+start: optional => first in dataset
+end: optional => if undefined return default max => if 
+max: default = 50
+order: asc or desc
 
 • The key "by" is required and the only values permitted are "id" and "name".
 • Both "start" and "end" identifiers can be omitted, in which case the start
@@ -27,11 +33,9 @@ maximum page, the page sizes takes precedence.
 
 */
 router.get('/', (req, res, next) => {
-
-
-
-
-
+  console.log(req.params)
+  console.log(req.query)
+  App.find().limit(req.params.max).then(data => res.json(data))
 });
 
 module.exports = router;
