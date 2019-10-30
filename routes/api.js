@@ -33,8 +33,8 @@ maximum page, the page sizes takes precedence.
 
 */
 router.get('/', (req, res, next) => {
-  console.log(req.params)
   console.log(req.query)
+  
   App.find().limit(req.params.max).then(data => res.json(data))
 });
 
