@@ -17,20 +17,25 @@ eg: seedApps(100);
 
 endpoint is /apps
 
-# Query structure
-  ## apps/?by=id&max=50
-  1. by
-  2.
-  3.
-  4.
-
-
 by: required => id/name only permitted
 start: optional => first in dataset
 end: optional => if undefined return default max => if 
 max: default = 50
 order: asc or desc
 
+# Query structure
+  ## apps/?by=id&max=50
+  1. by
+    required: id or name
+  2. start
+    optional
+  3. end
+    optional
+  4. max
+    page size
+    if undefined default is 50
+  5. order
+    asc or desc
 
 
 
