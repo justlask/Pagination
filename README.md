@@ -25,6 +25,8 @@ order: asc or desc
 
 # Query structure
   ## apps/?by=id&max=50
+  ## /apps/?by=name&start=2&end=40&max=30&order=asc
+  
   1. by
     required: id or name
   2. start

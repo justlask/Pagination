@@ -34,7 +34,12 @@ maximum page, the page sizes takes precedence.
 */
 router.get('/', (req, res, next) => {
   console.log(req.query)
-  
+  console.log(typeof(req.query.by))
+  if (req.query.by === undefined ) res.json('need a type, name or id')
+  if (req.query.by === "id" || req.query.by === "name") {
+    res.json(req.query)
+  }
+  else res.json('nope, thats messed up')
   App.find().limit(req.params.max).then(data => res.json(data))
 });
 
