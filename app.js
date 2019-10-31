@@ -12,13 +12,8 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
-const app_name = require('./package.json').name;
 
 const app = express();
-
-
-// default value for title local
-app.locals.title = 'MDlive Pagination';
 
 const index = require('./routes/index')
 app.use('/', index)

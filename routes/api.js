@@ -35,12 +35,40 @@ maximum page, the page sizes takes precedence.
 router.get('/', (req, res, next) => {
   console.log(req.query)
   console.log(typeof(req.query.by))
-  if (req.query.by === undefined ) res.json('need a type, name or id')
-  if (req.query.by === "id" || req.query.by === "name") {
-    res.json(req.query)
+  // cannot be undefined
+  if (req.query.by === undefined ) res.status(400).json('by is not optional: values are name or id')
+
+  //must be "id" or "name"
+  else if (req.query.by === "name") {
+    let max, end, start, order
+    (req.query.max === undefined) ? max = 50 : max = Number(req.query.max)
+    if (req.query.start)
+    if (req.query.end)
+    (req.query.order === "asc") ? order = 1 : order = -1
+
+    App.find()
+    .limit(max)
+    .sort({name: order})
+    .then(data => res.json(data))
+    // App.find().limit(req.params.max).then(data => res.json(data))
   }
-  else res.json('nope, thats messed up')
-  App.find().limit(req.params.max).then(data => res.json(data))
+
+  else if (req.query.by === "id") {
+    let max, end, start, order
+    (req.query.max === undefined) ? max = 50 : max = Number(req.query.max)
+    if (req.query.start)
+    if (req.query.end)
+    (req.query.order === "asc") ? order = 1 : order = -1
+
+    App.find()
+    .limit(max)
+    .sort({id: order})
+    .then(data => res.json(data))
+    // App.find().limit(req.params.max).then(data => res.json(data))
+  }
+
+  else res.status(400).json('nope, thats messed up')
+
 });
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const App = require('../models/App')
 
 
 /* GET home page */
@@ -18,7 +19,7 @@ params: {
 
 */
 router.get('/', (req, res, next) => {
-  res.json('hello')
+  App.find().then(data => res.json(data))
 });
 
 module.exports = router;
