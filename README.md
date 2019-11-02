@@ -24,10 +24,7 @@ max: default = 50
 order: asc or desc
 
 # Query structure
-  ## apps/?by=id&max=50
-  ## /apps/?by=id&start=2&end=40&max=30&order=asc
-  ## /apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3
-  
+  ## paramaters
   1. by
     required: id or name
   2. start
@@ -43,6 +40,14 @@ order: asc or desc
     response has data, which holds the results from the query
     page, which is the current page, defaults to 1 if none selected
     total, which is the total amount of pages which contain data
+
+
+
+  ## example queries
+  ### apps/?by=id&max=50
+  ### /apps/?by=id&start=2&end=40&max=30&order=asc
+  ### /apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3
+
 
 
 
