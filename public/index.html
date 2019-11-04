@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests for Pagination Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Automated Tests for endpoint /apps</h1>
+      <p>These tests are being run using Mocha and Chai</p>
+      <p>Tests are written for a db of 100 apps.</p>
+    </div>
+    <div id="mocha"></div>
+  
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+  
+    <script class="mocha-init">
+      mocha.setup('bdd');
+      mocha.checkLeaks();
+    </script>
+    <script src="chai.js"></script>
+    <script src="chai-http.js"></script>
+    <script>
+          chai.use(chaiHttp);
+          </script>
+    <script src="api.js"></script>
+    <!-- <script src="test.sum.js"></script> -->
+    <script class="mocha-exec">
+      mocha.run();
+    </script>
+  </body>
+</html>

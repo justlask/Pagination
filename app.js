@@ -4,9 +4,9 @@ const mongoose     = require('mongoose');
 const path         = require('path');
 
 mongoose
-  .connect(process.env.MONGO_URI, {useNewUrlParser: true})
+  .connect(process.env.MONGO_URI, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
   .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    // console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
@@ -14,6 +14,11 @@ mongoose
 
 
 const app = express();
+
+app.set("view options", {layout: false});
+app.use(express.static(__dirname + '/public'));
+
+
 
 const index = require('./routes/index')
 app.use('/', index)

@@ -1,14 +1,18 @@
 # Local Set up
-1. You will need to create a .env in the root directory
-2. Add the following to your newly created .env
+1. Git clone, npm install
+2. You will need to create a .env in the root directory
+3. Add the following to your newly created .env
     1. PORT=3000 (or whichever you choose)
     2. MONGO_URI= "your connection string"
-3. Seed your DB
+4. Seed your DB
 
       Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps", this can be changed by increasing the size of the number inside seedApps in the seeds file. 
-            It is only set up to handle from 1 to 999 apps created this way.
+            It is only set up to handle from 1 to 999 apps created this way
 
-eg: seedApps(400);
+
+      <b>Note: Mocha tests are written for 100 apps</b>
+
+eg: seedApps(100);
 
 # Doccumentation for the API
 #### API routes are located in routes/api.js
@@ -75,5 +79,12 @@ eg: seedApps(400);
 
 
 
-# TODO:
-• Bonus points: Automatic tests covering the endpoint "/apps".
+# Bonus: Automatic tests covering the endpoint "/apps".
+
+## Mocha
+For testing of this app I am using mocha.
+If you are running it locally, you may access the tests by running `npm test`
+
+
+Tests will auto load when you hit the page (at '/') without accessing the api endpoint at /apps
+If you are trying to load these tests in the browser locally, please change occurances of ${liveURL} to ${localURL} in `public/api.js`

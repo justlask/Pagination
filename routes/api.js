@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 
   //must be "id" or "name"
 
-  if (req.query.by === "name" || req.query.by === "id") {
+  else if (req.query.by === "name" || req.query.by === "id") {
     let type = req.query.by
     let max, order, page
     (req.query.max === undefined) ? max = 50 : max = Number(req.query.max);
