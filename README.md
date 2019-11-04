@@ -38,6 +38,17 @@ eg: seedApps(100);
   ### /apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3
 
 
+# Approach doccumentation
+#### Planning
+  I looked at this challenge, and thought that I would solve it in Ruby, using RoR. I spent a few hours learning basic Ruby syntax, but decided that I would initially solve the problem in the language that I am most comfortable with -- JavaScript.
+
+#### Node.js + Express.js + Mongoose
+  I created a new folder, and used npm init to create a new package.json. Looking at the requirements I saw that there were no libraries to be used in this process, so I kept it minimal, only installing 3 npm packages: express, dotenv, and mongoose. I then created a basic file structure to hold my seeds, set up routing, and handle my models and database connection.
+
+#### Routing
+
+
+
 
 
 # TODO:
