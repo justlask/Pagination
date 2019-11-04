@@ -27,7 +27,7 @@ router.get('/', (req, res, next) => {
     .sort({name: order})
     .then(data => {
       App.countDocuments(variables, function(err, count) {
-        res.json({data: data, page: page, total: Math.ceil(count/max)})
+        res.json({data: data, page: page, totalPages: Math.ceil(count/max)})
     }).catch(err => res.json(err))
   })
 }

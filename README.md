@@ -58,9 +58,16 @@ eg: seedApps(100);
 
       1. initalize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
         
-      2. a few cases to modify the query depending on start/end combinations.
+      2. a few cases to modify `variables` depending on start/end combinations.
 
   5. handle the search and pagination
+
+      1. Find all documents that match the `variables` object using `.find()`
+      2. set the max page size using `.limit()` and the max param, defaulting to 50
+      3. use `.skip()` to handle the offset requirements (desired max * page number) - max
+      4. use `.sort()` with the value `order` to determine ascending or descending - defaulting to ascending if unknown.
+      5. before sending the json data back, I use `.countDocuments()` with the `variables` to see how many documents match the query, using that data I calculate how many pages of data there are. and return the data, the current page, and the total amount of pages.
+
 
 
 
