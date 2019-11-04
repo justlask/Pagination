@@ -37,26 +37,12 @@ eg: seedApps(100);
 
 
   ## example queries
-      #### /apps
 
-
-      <https://paginationmdlive.herokuapp.com/apps>
-
-      #### /apps/?by=id&max=50
-
-
-      <https://paginationmdlive.herokuapp.com/apps/?by=id&max=50>
-
-      #### /apps/?by=id&start=2&end=40&max=30&order=asc
-
-
-
-      <https://paginationmdlive.herokuapp.com/apps/?by=id&start=2&end=40&max=30&order=asc>
-
-      #### /apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3
-      
-      <https://paginationmdlive.herokuapp.com/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3>
-
+[/apps](https://paginationmdlive.herokuapp.com/apps)
+[/apps/?by=id&max=50](https://paginationmdlive.herokuapp.com/apps/?by=id&max=50)
+[/apps/?by=id&start=2&end=40&max=30&order=asc](https://paginationmdlive.herokuapp.com/apps/?by=id&start=2&end=40&max=30&order=asc)
+[/apps](https://paginationmdlive.herokuapp.com/apps)
+[/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3](https://paginationmdlive.herokuapp.com/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3)
 
 # Approach doccumentation
 #### Planning
