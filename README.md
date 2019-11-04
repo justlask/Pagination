@@ -11,9 +11,9 @@
 eg: seedApps(100);
 </p>
 
-# API routes are located in routes/api.js
 # Doccumentation for the api
-## endpoint is /apps
+### API routes are located in routes/api.js
+### endpoint is /apps
 
 # Query structure
   ## paramaters
