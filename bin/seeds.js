@@ -38,6 +38,12 @@ function seedApps(num) {
         name: `my-app-${number}`,
         })
     }
+    if (i > 100 & i < 1000) {
+      apps.push({
+        id: i,
+        name: `my-app-${number}`
+      })
+    }
   }
 }
 

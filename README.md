@@ -1,12 +1,14 @@
-# You will need a .env file to run locally
-### please add to the .env you created in the root directory
-1. PORT=3000 (or whichever you choose)
-2. MONGO_URI= "your connection string"
+# Local Set up
+1. You will need to create a .env in the root directory
+2. Add the following to your newly created .env
+    1. PORT=3000 (or whichever you choose)
+    2. MONGO_URI= "your connection string"
+3. Seed your DB
 
-# Seed Your DB
-You can simply run <b>node bin/seeds.js</b> in terminal to seed your database, it is set up to load 100 "apps", this can be changed by increasing the size of the number inside seedApps in the seeds file. 
+      Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps", this can be changed by increasing the size of the number inside seedApps in the seeds file. 
+            It is only set up to handle from 1 to 999 apps created this way.
 
-eg: seedApps(100);
+eg: seedApps(400);
 
 # Doccumentation for the API
 #### API routes are located in routes/api.js
