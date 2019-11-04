@@ -43,7 +43,17 @@ eg: seedApps(100);
   I created a new folder, and used npm init to create a new package.json. Looking at the requirements I saw that there were no libraries to be used in this process, so I kept it minimal, only installing 3 npm packages: express, dotenv, and mongoose. I then created a basic file structure to hold my seeds, set up routing, and handle my models and database connection.
 
 #### Routing
-
+  1. "by" is required, if by is undefined an error message is delivered stating that by is required and the only valid options are `id` or `name`
+  2. if "by" is anything other than `id` or `name` an error message is delivered stating the same.
+  3. if they enter a valid query:
+    -- handle a case for max, setting default to 50 if undefined
+    -- handle ascending/descending, if undefined using ascending
+    -- handle page number, the number given or 1 if undefined
+    -- handle starts and ends: 
+        1. initalize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
+        2. a few cases to modify the query depending on start/end combinations.
+    -- handle the search and pagination
+    
 
 
 

@@ -3,12 +3,12 @@ const router  = express.Router();
 const App = require('../models/App')
 
 router.get('/', (req, res, next) => {
-  console.log(req.query)
 
   // cannot be undefined
   if (req.query.by === undefined ) res.status(400).json('by is not optional, values are: name or id')
 
   //must be "id" or "name"
+
   if (req.query.by === "name" || req.query.by === "id") {
     let type = req.query.by
     let max, order, page
@@ -32,7 +32,7 @@ router.get('/', (req, res, next) => {
   })
 }
 
-  else res.status(400).json('err')
+  else res.status(400).json('please check the documentation, you have entered an invalid query: by must be: id or name')
 });
 
 module.exports = router;
