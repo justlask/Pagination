@@ -47,11 +47,11 @@ eg: seedApps(100);
   2. if "by" is anything other than `id` or `name` an error message is delivered stating the same.
   3. if they enter a valid query:
 
-    1. handle a case for max, setting default to 50 if undefined
+      1. handle a case for max, setting default to 50 if undefined
 
-    2. handle ascending/descending, if undefined using ascending
+      2. handle ascending/descending, if undefined using ascending
 
-    3. handle page number, the number given or 1 if undefined
+      3. handle page number, the number given or 1 if undefined
 
   4. handle starts and ends: 
 
