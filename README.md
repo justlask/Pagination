@@ -13,15 +13,7 @@ eg: seedApps(100);
 
 # API routes are located in routes/api.js
 # Doccumentation for the api
-
-
-endpoint is /apps
-
-by: required => id/name only permitted
-start: optional => first in dataset
-end: optional => if undefined return default max => if 
-max: default = 50
-order: asc or desc
+## endpoint is /apps
 
 # Query structure
   ## paramaters
