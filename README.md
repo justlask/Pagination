@@ -45,13 +45,13 @@ eg: seedApps(100);
 #### Routing
   1. "by" is required, if by is undefined an error message is delivered stating that by is required and the only valid options are `id` or `name`
   2. if "by" is anything other than `id` or `name` an error message is delivered stating the same.
-  3. if they enter a valid query:
+  3. if they enter a valid query:<br>
     1. handle a case for max, setting default to 50 if undefined
-    2. handle ascending/descending, if undefined using ascending
-    3. handle page number, the number given or 1 if undefined
-    4. handle starts and ends: 
+    2. handle ascending/descending, if undefined using ascending<br>
+    3. handle page number, the number given or 1 if undefined<br>
+    4. handle starts and ends: <br>
         1. initalize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
-        2. a few cases to modify the query depending on start/end combinations.
+        2. a few cases to modify the query depending on start/end combinations.<br>
     5. handle the search and pagination
 
 
