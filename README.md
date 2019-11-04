@@ -43,7 +43,7 @@ eg: seedApps(100);
 [/apps/?by=id&start=2&end=40&max=30&order=asc](https://paginationmdlive.herokuapp.com/apps/?by=id&start=2&end=40&max=30&order=asc)<br>
 [/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3](https://paginationmdlive.herokuapp.com/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3)
 
-# Approach doccumentation
+# Approach documentation
 #### Planning
   I looked at this challenge, and thought that I would solve it in Ruby, using RoR. I spent a few hours learning basic Ruby syntax, but decided that I would initially solve the problem in the language that I am most comfortable with -- JavaScript.
 

@@ -7,7 +7,7 @@
     "dev": "DEBUG=practice:* nodemon ./bin/www",
     "dev-windows": "nodemon ./bin/www"
   },
-  "author": "",
+  "author": "lauren laskerr",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
