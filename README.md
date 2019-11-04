@@ -57,9 +57,10 @@ eg: seedApps(100);
   4. handle starts and ends: 
 
 
-        initalize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
+      1. initalize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
         
-        a few cases to modify the query depending on start/end combinations.
+      2. a few cases to modify the query depending on start/end combinations.
+
   5. handle the search and pagination
 
 
