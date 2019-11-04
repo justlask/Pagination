@@ -25,17 +25,17 @@ order: asc or desc
 
 # Query structure
   ## paramaters
-  1. <b>by</b> 
+  1. <b>by</b><br>
     required: id or name
-  2. <b>start</b>
+  2. <b>start</b><br>
     optional: id number or name
-  3. <b>end</b>
+  3. <b>end</b><br>
     optional: id number or name
-  4. <b>max</b>
+  4. <b>max</b><br>
     optional: the requested page size (if undefined default is 50)
-  5. <b>order</b>
+  5. <b>order</b><br>
     optional: asc or desc
-  6. <b>page</b>
+  6. <b>page</b><br>
     optional: defaults to first page on intial request, can be any page number up to the number in "total"
 
 
