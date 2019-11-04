@@ -12,7 +12,7 @@ let liveURL = '/'
 describe('/app without params', () => {
 
   it('should fail fail with a status 400', function(done) { // <= Pass in done callback
-    chai.request(`${liveURL}`)
+    chai.request('/')
     .get('/apps')
     .end(function(err, res) {
       expect(res).to.have.status(400);
@@ -20,7 +20,7 @@ describe('/app without params', () => {
     });
   });
   it('should respond with message "by is not optional, values are: name or id"', function(done) { // <= Pass in done callback
-    chai.request(`${liveURL}`)
+    chai.request('/')
     .get('/apps')
     .end(function(err, res) {
       expect(res.body).to.equal("by is not optional, values are: name or id")
@@ -35,7 +35,7 @@ describe('/app without params', () => {
 describe('test to ensure by= is required to be id or name only', () => {
 
   it('should fail fail with a status 400', function(done) { // <= Pass in done callback
-    chai.request(`${liveURL}`)
+    chai.request('/')
     .get('/apps/?by=george')
     .end(function(err, res) {
       expect(res).to.have.status(400);
@@ -58,7 +58,7 @@ describe('test to ensure by= is required to be id or name only', () => {
 describe('tests for by=name', () => {
 
   it('should respond with a status of 200', function(done) {
-    chai.request(`${liveURL}`)
+    chai.request('/')
     .get('/apps/?by=name')
     .end(function(err, res) {
       expect(res).to.have.status(200);
