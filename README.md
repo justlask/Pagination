@@ -4,6 +4,7 @@
 3. Add the following to your newly created .env
     1. PORT=3000 (or whichever you choose)
     2. MONGO_URI= "your connection string"
+        -'mongodb://localhost:3000/apps'
 4. Seed your DB
 
       Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps", this can be changed by increasing the size of the number inside seedApps in the seeds file. 
