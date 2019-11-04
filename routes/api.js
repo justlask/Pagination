@@ -38,32 +38,62 @@ router.get('/', (req, res, next) => {
   // cannot be undefined
   if (req.query.by === undefined ) res.status(400).json('by is not optional: values are name or id')
 
+
+
+
   //must be "id" or "name"
   else if (req.query.by === "name") {
-    let max, end, start, order
+
+    let max, end, start, order, page
+
     (req.query.max === undefined) ? max = 50 : max = Number(req.query.max)
+    console.log(req.query.page)
+    console.log(typeof req.query.page)
+    page = Number(req.query.page) || 1
+
     if (req.query.start)
     if (req.query.end)
     (req.query.order === "asc") ? order = 1 : order = -1
 
+    // let number = App.count({}, (err, count) => {return count})
+  
+    // console.log(count)
     App.find()
     .limit(max)
+    .skip((max * page) - max)
     .sort({name: order})
-    .then(data => res.json(data))
+    .then(data => {
+
+
+      App.countDocuments({}, function(err, count) {
+        if (err) { return handleError(err) } //handle possible errors
+        res.json({data: data, page: page, total: Math.floor(count/max)})
+        //and do some other fancy stuff
+    })
     // App.find().limit(req.params.max).then(data => res.json(data))
-  }
+  })
+}
+
+
 
   else if (req.query.by === "id") {
-    let max, end, start, order
+    let max, end, start, order, page
+
+    (req.query.page === undefined) ? page = 1 : page = req.query.page
     (req.query.max === undefined) ? max = 50 : max = Number(req.query.max)
-    if (req.query.start)
-    if (req.query.end)
+
+
+    // if (req.query.start)
+    // if (req.query.end)
+
+
+    
     (req.query.order === "asc") ? order = 1 : order = -1
 
     App.find()
     .limit(max)
     .sort({id: order})
-    .then(data => res.json(data))
+    .then(data => res.json({data: data, page: page}))
     // App.find().limit(req.params.max).then(data => res.json(data))
   }
 
