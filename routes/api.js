@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
     let type = req.query.by
     let max, order, page
     (req.query.max === undefined) ? max = 50 : max = Number(req.query.max);
-    (req.query.order === "asc") ? order = 1 : order = -1;
+    (req.query.order === "desc") ? order = -1 : order = 1;
     page = Number(req.query.page) || 1;
 
     let variables = {}
