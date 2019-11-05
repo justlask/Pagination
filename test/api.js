@@ -2,7 +2,7 @@ let App = require('../models/App')
 let assert = require('assert');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('../app');
+let server = require('../app.js');
 let should = chai.should;
 let expect = chai.expect;
 
