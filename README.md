@@ -1,16 +1,22 @@
 # Local Set up
-1. Git clone, npm install
-2. You will need to create a .env in the root directory
-3. Add the following to your newly created .env
-    1. PORT=3000 (or whichever you choose)
-    2. MONGO_URI= "your connection string" or 'mongodb://localhost/apps'
-4. Seed your DB
-
-      Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps", this can be changed by increasing the size of the number inside seedApps in the seeds file. 
-            It is only set up to handle from 1 to 999 apps created this way
+  1. Git clone, npm install
 
 
-      <b>Note: Mocha tests are written for 100 apps</b>
+  2. You will need to create a .env in the root directory
+
+
+  3. Add the following to your newly created .env
+
+
+      1. PORT=3000
+      2. MONGO_URI=mongodb://localhost/apps (or your connection string if running on the cloud
+  )
+  4. Seed your DB
+      [how to set up mongoDB locally](https://www.codecademy.com/articles/tdd-setup-mongodb-2)<br>
+        Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps",this can be changed by increasing the size of the number inside seedApps in the seeds file. It is only set up to handle from 1 to 999 apps created this way
+
+
+# <b>Note: Mocha tests are written for 100 apps</b>
 
 eg: seedApps(100);
 
