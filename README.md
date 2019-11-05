@@ -2,8 +2,8 @@
 1. Git clone
 2. npm install
 3. create .env in the root directory and add the following
-  1. PORT=3000
-  2. MONGO_URI=mongodb://localhost/apps (or your connection string if running on the cloud)
+      1. PORT=3000
+      2. MONGO_URI=mongodb://localhost/apps (or your connection string if running on the cloud)
 4. Seed your DB
     [how to set up mongoDB locally](https://www.codecademy.com/articles/tdd-setup-mongodb-2)<br>
     Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps" this can be changed by increasing the size of the number inside seedApps in the seeds file. It is only set up to handle from 1 to 999 apps created this way. eg: seedApps(100);
@@ -54,18 +54,18 @@ optional: defaults to first page on initial request, can be any page�
 2. if "by" is anything other than `id` or `name` an error message is delivered stating the same.
 
 3. if they enter a valid query:
-  1. handle a case for max, setting default to 50 if undefined
-  2. handle ascending/descending, if undefined using ascending
-  3. handle page number, the number given or 1 if undefined
+     1. handle a case for max, setting default to 50 if undefined
+     2. handle ascending/descending, if undefined using ascending
+     3. handle page number, the number given or 1 if undefined
 4. handle starts and ends:
-  1. initialize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
-  2. a few cases to modify `variables` depending on start/end combinations.
+     1. initialize an empty object `variables` which will then be passed into the find query if start/end are undefined. 
+     2. a few cases to modify `variables` depending on start/end combinations.
 5. handle the search and pagination
-  1. Find all documents that match the `variables` object using `.find()`
-  2. set the max page size using `.limit()` and the max param, defaulting to 50
-  3. use `.skip()` to handle the offset requirements (desired max * page number) - max
-  4. use `.sort()` with the value `order` to determine ascending or descending - defaulting to ascending if unknown.
-  5. before sending the json data back, I use `.countDocuments()` with the `variables` to see how many documents match the query, using that data I calculate how many pages of data there are. and return the data, the current page, and the total amount of pages.
+    1. Find all documents that match the `variables` object using `.find()`
+    2. set the max page size using `.limit()` and the max param, defaulting to 50
+    3. use `.skip()` to handle the offset requirements (desired max * page number) - max
+    4. use `.sort()` with the value `order` to determine ascending or descending - defaulting to ascending if unknown.
+    5. before sending the json data back, I use `.countDocuments()` with the `variables` to see how many documents match the query, using that data I calculate how many pages of data there are. and return the data, the current page, and the total amount of pages.
 
 # Bonus: Automatic tests covering the endpoint "/apps".
 
