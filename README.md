@@ -12,17 +12,16 @@
       [how to set up mongoDB locally](https://www.codecademy.com/articles/tdd-setup-mongodb-2)<br>
         Navigate to the root folder and run `node bin/seeds.js` in the terminal to seed your database, it is set up to load 100 "apps",this can be changed by increasing the size of the number inside seedApps in the seeds file. It is only set up to handle from 1 to 999 apps created this way
 
-
 # <b>Note: Mocha tests are written for 100 apps</b>
 
 eg: seedApps(100);
 
-# Documentation for the API
-#### API routes are located in routes/api.js
+# Documentation for the API
+#### API routes are located in routes/api.js
 #### endpoint is /apps
 
-# Query structure
-  ## parameters
+# Query structure
+## parameters
   1. <b>by</b><br>
     required: id or name
   2. <b>start</b><br>
@@ -38,21 +37,21 @@ eg: seedApps(100);
 
 
 
-  ## example queries
+## example queries
 
 [/apps](https://paginationmdlive.herokuapp.com/apps)<br>
 [/apps/?by=id&max=50](https://paginationmdlive.herokuapp.com/apps/?by=id&max=50)<br>
 [/apps/?by=id&start=2&end=40&max=30&order=asc](https://paginationmdlive.herokuapp.com/apps/?by=id&start=2&end=40&max=30&order=asc)<br>
 [/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3](https://paginationmdlive.herokuapp.com/apps/?by=name&start=my-app-005&end=my-app-040&max=10&order=asc&page=3)
 
-# Approach documentation
+# Approach documentation
 #### Planning
   I looked at this challenge, and thought that I would solve it in Ruby, using RoR. I spent a few hours learning basic Ruby syntax, but decided that I would initially solve the problem in the language that I am most comfortable with -- JavaScript.
 
 #### Node.js + Express.js + Mongoose
   I created a new folder, and used npm init to create a new package.json. Looking at the requirements I saw that there were no libraries to be used in this process, so I kept it minimal, only installing 3 npm packages: express, dotenv, and mongoose. I then created a basic file structure to hold my seeds, set up routing, and handle my models and database connection.
 
-#### Routing
+#### Routing
   1. "by" is required, if by is undefined an error message is delivered stating that by is required and the only valid options are `id` or `name`
   2. if "by" is anything other than `id` or `name` an error message is delivered stating the same.
   3. if they enter a valid query:
@@ -82,9 +81,9 @@ eg: seedApps(100);
 
 
 
-# Bonus: Automatic tests covering the endpoint "/apps".
+# Bonus: Automatic tests covering the endpoint "/apps".
 
-## Mocha / Chai
+## Mocha / Chai
 For testing of this app I am using mocha.
 If you are running it locally, you may access the tests by running `npm test`
 
